@@ -1,5 +1,5 @@
 # AeroTop v1.0
 
-The first version of AeroTop is released on 1 April 2022!
+The first version of AeroTop was released on 1 April 2022!
 
 
