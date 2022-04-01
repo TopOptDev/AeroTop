@@ -1,0 +1,72 @@
+%======================================================================%
+%                            AeroTop v1.0
+%======================================================================%
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTRODUCTION:
+AeroTop is a framework for an efficient (laminar) aerodynamic topology 
+optimization, in OpenFOAM environment. The current tool can be used for 
+internal, external, 2D and 3D problems, via either serial or parallel 
+computers. The methodologies implemented in the present framework have 
+been developed according to the following research paper:
+
+Ghasemi, Ali & Elham, Ali. "Efficient multi-stage aerodynamic topology 
+optimization using an operator-based analytical differentiation."
+Structural and Multidisciplinary Optimization, (2022),
+
+downloadable from:
+https://doi.org/10.1007/s00158-022-03208-x
+https://link.springer.com/content/pdf/10.1007/s00158-022-03208-x.pdf
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTACT DATA:
+Code author:    Ali Ghasemi
+Email:          a.ghasemi(at)tu-braunschweig.de
+Institution:    IFL institute, TU Braunschweig, Germany
+Web:            https://www.tu-braunschweig.de/en/ifl/cad/staff/ghasemi
+GitHUB:         https://github.com/TopOptDev
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LICENSE:
++ The codes are released under the GPL-3.0 License 
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INSTALLATION GUIDE:
++ The present framework is developed and tested with the following codes 
+and libraries:
+1- OpenFOAM v8
+2- armadillo v10.1.2
+3- Matlab R2020b
+4- MMA Matlab code
+5- gcc (GCC) v4.8.5
+6- OpenMPI v3.0.2 
+7- OpenBLAS v0.3.10
+8- CentOS 7
+
++ Make sure to install OpenBLAS and all related requirements of armadillo
+to enable its highest performance.
+
++ The MMA Matlab code is not included here. It is your task to provode it.
+
++ Intel compiler can also be used instead of gcc.
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EXECUTATION GUIDE:
++ Make sure there is a folder named "data" in your case folder.
+
++ Update line 418 of "OAD_sensitivities.H" with the correct path to your 
+matlab launcher, like: 
+
+system ("/path/to/matlab -nodisplay -nosplash -nodesktop 
+-r \"run(\'adjointSolver.m\'); exit;\" ");
+
++ The Sensitivity part uses the same FVM schemes that are in the examples. 
+  Further schemes are to be implemented in future updates.
+
++ Place the "outlet" in the first place of the boundary conditions.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAINTENANCE & UPDATES:
++ Please report the bugs to the provided email.
+
++ Please stay tuned for further developments.
+
+%======================================================================%
+%======================================================================%
+%======================================================================%
